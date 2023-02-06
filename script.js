@@ -1,5 +1,6 @@
 // Iniciando o projeto Pixel art
 
+// Requisito 4 foi realizado através da ajuda do video https://www.youtube.com/watch?v=E5qWEY1GVQ0
 function generateColor() {
   const chars = '01234567ABCDEF';
   let color = '#';
@@ -16,3 +17,4 @@ document.getElementById('button-random-color').addEventListener('click', () => {
     pixelColor.style.backgroundColor = generateColor();
   }
 });
+
