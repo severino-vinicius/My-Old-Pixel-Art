@@ -15,6 +15,18 @@
   background-color: black;
 }
 
+#color-palette-1 {
+  background-color: aqua;
+}
+
+#color-palette-2 {
+  background-color: yellow;
+}
+
+#color-palette-3 {
+  background-color: blue;
+}
+
 #button-random-color {
   position: fixed;
   top: 115px;

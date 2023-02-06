@@ -18,3 +18,5 @@ document.getElementById('button-random-color').addEventListener('click', () => {
   }
 });
 
+document.getElementById('button-random-color').innerHTML = 'Cores aleatórias';
+
