@@ -11,21 +11,20 @@ function generateColor() {
   return color;
 }
 
-console.log();
-
 document.getElementById('button-random-color').addEventListener('click', () => {
   const colorArray = [];
   for (let i = 0; i < 3; i += 1) {
     const pixelColor = document.getElementById(`color-palette-${i + 1}`);
     pixelColor.style.backgroundColor = generateColor();
     colorArray.push(pixelColor.style.backgroundColor);
+    console.log(colorArray);
   }
   localStorage.setItem('colorPalette', JSON.stringify(colorArray));
 });
 
 const historyColor = localStorage.getItem('colorPalette');
 const historyColorParsed = JSON.parse(historyColor);
-console.log(historyColorParsed);
+// console.log(historyColorParsed);
 
 function colorPaletteHistory() {
   for (let i = 0; i < 3; i += 1) {
@@ -38,12 +37,12 @@ function createPixelBoard() {
   const pixelBoard = document.getElementById('pixel-board');
   for (let index = 0; index < 5; index += 1) {
     const createPixel = document.createElement('div');
-    createPixel.className = 'pixel';
+    createPixel.className = 'pixelL';
     pixelBoard.appendChild(createPixel);
-    for (let index2 = 0; index2 < 4; index2 += 1) {
+    for (let index2 = 0; index2 < 5; index2 += 1) {
       const createPixel2 = document.createElement('div');
       createPixel2.className = 'pixel';
-      pixelBoard.appendChild(createPixel2);
+      createPixel.appendChild(createPixel2);
     }
   }
 }
