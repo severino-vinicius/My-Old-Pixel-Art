@@ -11,12 +11,31 @@ function generateColor() {
   return color;
 }
 
+console.log();
+
 document.getElementById('button-random-color').addEventListener('click', () => {
+  const colorArray = [];
   for (let i = 0; i < 3; i += 1) {
     const pixelColor = document.getElementById(`color-palette-${i + 1}`);
     pixelColor.style.backgroundColor = generateColor();
+    colorArray.push(pixelColor.style.backgroundColor);
   }
+  localStorage.setItem('colorPalette', JSON.stringify(colorArray));
 });
 
-document.getElementById('button-random-color').innerHTML = 'Cores aleatórias';
+const historyColor = localStorage.getItem('colorPalette');
+const historyColorParsed = JSON.parse(historyColor);
+console.log(historyColorParsed);
 
+function colorPaletteHistory() {
+  for (let i = 0; i < 3; i += 1) {
+    document.getElementById(`color-palette-${i + 1}`).style.backgroundColor = historyColorParsed[i];
+  }
+  return historyColor;
+}
+
+window.onload = () => {
+  if (localStorage.getItem('colorPalette')) {
+    colorPaletteHistory();
+  }
+};
