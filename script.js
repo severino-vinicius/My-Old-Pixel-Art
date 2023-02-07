@@ -48,8 +48,27 @@ function createPixelBoard() {
 }
 createPixelBoard();
 
+function selectedBlackPixel() {
+  const selectedBlack = document.querySelector('.color');
+  selectedBlack.classList.add('selected');
+}
+
+const selectClassColor = document.querySelectorAll('.color');
+// eslint-disable-next-line no-restricted-syntax
+for (const selectedColor of selectClassColor) {
+  selectedColor.addEventListener('click', (event) => {
+    const selectedPixel = document.querySelector('.selected');
+    if (selectedPixel !== null) {
+      selectedPixel.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  });
+}
+
 window.onload = () => {
   if (localStorage.getItem('colorPalette')) {
     colorPaletteHistory();
   }
+
+  selectedBlackPixel();
 };
