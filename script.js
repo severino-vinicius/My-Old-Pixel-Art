@@ -34,6 +34,21 @@ function colorPaletteHistory() {
   return historyColor;
 }
 
+function createPixelBoard() {
+  const pixelBoard = document.getElementById('pixel-board');
+  for (let index = 0; index < 5; index += 1) {
+    const createPixel = document.createElement('div');
+    createPixel.className = 'pixel';
+    pixelBoard.appendChild(createPixel);
+    for (let index2 = 0; index2 < 4; index2 += 1) {
+      const createPixel2 = document.createElement('div');
+      createPixel2.className = 'pixel';
+      pixelBoard.appendChild(createPixel2);
+    }
+  }
+}
+createPixelBoard();
+
 window.onload = () => {
   if (localStorage.getItem('colorPalette')) {
     colorPaletteHistory();

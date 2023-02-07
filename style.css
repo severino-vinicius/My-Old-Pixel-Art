@@ -33,3 +33,14 @@
   cursor: pointer;
 }
 
+#pixel-board {
+  width: 600px;
+  height: 600px;
+}
+
+.pixel {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+}
