@@ -1,5 +1,7 @@
 // Iniciando o projeto Pixel art
 
+const fistPixelBlack = document.getElementById('color-palette-black').style.backgroundColor = "black";
+
 // Requisito 4 foi realizado através da ajuda do video https://www.youtube.com/watch?v=E5qWEY1GVQ0
 function generateColor() {
   const chars = '01234567ABCDEF';
@@ -65,10 +67,23 @@ for (const selectedColor of selectClassColor) {
   });
 }
 
+const pixelBoardResc = document.getElementsByClassName('pixel');
+function selectedPixelBoard() {
+// eslint-disable-next-line no-restricted-syntax
+  for (const pixelSelector of pixelBoardResc) {
+    pixelSelector.addEventListener('click', (event) => {
+      const selectedPixel = document.querySelector('.selected');
+      event.target.style.backgroundColor = selectedPixel.style.backgroundColor;
+    });
+  }
+}
+
+
 window.onload = () => {
   if (localStorage.getItem('colorPalette')) {
     colorPaletteHistory();
   }
 
   selectedBlackPixel();
+  selectedPixelBoard();
 };
