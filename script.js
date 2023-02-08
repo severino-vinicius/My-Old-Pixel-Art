@@ -1,6 +1,10 @@
 // Iniciando o projeto Pixel art
 
-const fistPixelBlack = document.getElementById('color-palette-black').style.backgroundColor = "black";
+document.getElementById('color-palette-black').style.backgroundColor = 'rgb(0,0,0)';
+document.getElementById('color-palette-1').style.backgroundColor = 'rgb(0, 255, 255)';
+document.getElementById('color-palette-2').style.backgroundColor = 'rgb(255, 255, 0)';
+document.getElementById('color-palette-3').style.backgroundColor = 'rgb(0, 0, 255)';
+
 
 // Requisito 4 foi realizado através da ajuda do video https://www.youtube.com/watch?v=E5qWEY1GVQ0
 function generateColor() {
@@ -73,11 +77,12 @@ function selectedPixelBoard() {
   for (const pixelSelector of pixelBoardResc) {
     pixelSelector.addEventListener('click', (event) => {
       const selectedPixel = document.querySelector('.selected');
+      console.log(selectedPixel.style.backgroundColor);
       event.target.style.backgroundColor = selectedPixel.style.backgroundColor;
     });
   }
 }
-
+selectedPixelBoard()
 
 window.onload = () => {
   if (localStorage.getItem('colorPalette')) {
