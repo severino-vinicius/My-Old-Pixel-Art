@@ -5,7 +5,6 @@ document.getElementById('color-palette-1').style.backgroundColor = 'rgb(0, 255, 
 document.getElementById('color-palette-2').style.backgroundColor = 'rgb(255, 255, 0)';
 document.getElementById('color-palette-3').style.backgroundColor = 'rgb(0, 0, 255)';
 
-
 // Requisito 4 foi realizado através da ajuda do video https://www.youtube.com/watch?v=E5qWEY1GVQ0
 function generateColor() {
   const chars = '01234567ABCDEF';
@@ -82,7 +81,13 @@ function selectedPixelBoard() {
     });
   }
 }
-selectedPixelBoard()
+selectedPixelBoard();
+
+const buttonClearBox = document.getElementById('clear-board').addEventListener('click', () => {
+  for (let index = 0; index < pixelBoardResc.length; index += 1) {
+    pixelBoardResc[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+});
 
 window.onload = () => {
   if (localStorage.getItem('colorPalette')) {

@@ -1,6 +1,24 @@
 /* teste */
 * {
-  margin: 0 px;
+  margin: 0;
+}
+
+#main {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+#text-title {
+  background-color: rgb(158, 158, 170);
+  height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+#title {
+  text-align: center;
+  padding-top: 10px;
 }
 
 .color {
@@ -10,6 +28,10 @@
   display: inline-block;
   margin: 5px;
   border-radius: 50%;
+}
+
+#color-palette {
+  margin-top: 15px;
 }
 
 #color-palette-black {
@@ -29,14 +51,14 @@
 }
 
 #button-random-color {
-  position: fixed;
   top: 115px;
   cursor: pointer;
+  margin: 15px;
 }
 
 #pixel-board {
-  width: 600px;
-  height: 600px;
+  width: 210px;
+  margin: 0 auto;
 }
 
 .pixelL {
