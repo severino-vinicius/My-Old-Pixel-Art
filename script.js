@@ -76,18 +76,30 @@ function selectedPixelBoard() {
   for (const pixelSelector of pixelBoardResc) {
     pixelSelector.addEventListener('click', (event) => {
       const selectedPixel = document.querySelector('.selected');
-      console.log(selectedPixel.style.backgroundColor);
+      // console.log(selectedPixel.style.backgroundColor);
       event.target.style.backgroundColor = selectedPixel.style.backgroundColor;
     });
   }
 }
 selectedPixelBoard();
 
-const buttonClearBox = document.getElementById('clear-board').addEventListener('click', () => {
+document.getElementById('clear-board').addEventListener('click', () => {
   for (let index = 0; index < pixelBoardResc.length; index += 1) {
     pixelBoardResc[index].style.backgroundColor = 'rgb(255, 255, 255)';
   }
 });
+
+function pixelBoardRescHistory() {
+  const arrayOfPixelBoardColor = [];
+  for (let index = 0; index < pixelBoardResc.length; index += 1) {
+    pixelBoardResc.addEventListener('click', (event) => {
+      arrayOfPixelBoardColor.push('teste');
+      console.log(arrayOfPixelBoardColor);
+    });
+    console.log(arrayOfPixelBoardColor);
+  }
+}
+pixelBoardRescHistory();
 
 window.onload = () => {
   if (localStorage.getItem('colorPalette')) {
